@@ -1,0 +1,8 @@
+---
+  flow-definitions:
+    - name: 'Test'
+      queue: '{DEPLOYMENT_PREFIX}_api_testApiGraphFlow_v0'
+      edges:
+        - from:
+          to:
+            - 'Test'
