@@ -38,8 +38,8 @@ class F8AConfiguration(object):
     BIGQUERY_JSON_KEY = environ.get('GITHUB_CONSUMER_KEY', 'not-set')
 
     BROKER_CONNECTION = "amqp://guest@{host}:{port}".format(
-        host=environ.get('RABBITMQ_SERVICE_SERVICE_HOST', 'coreapi-broker'),
-        port=environ.get('RABBITMQ_SERVICE_SERVICE_PORT', '5672'))
+        host=environ.get('RABBITMQ_SERVICE_SERVICE_HOST', '0.0.0.0'),
+        port=environ.get('RABBITMQ_SERVICE_SERVICE_PORT', '15672'))
 
     GIT_USER_NAME = environ.get('GIT_USER_NAME', 'f8a')
     GIT_USER_EMAIL = environ.get('GIT_USER_EMAIL', 'f8a@f8a')
