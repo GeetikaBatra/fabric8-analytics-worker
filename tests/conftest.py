@@ -48,6 +48,16 @@ def maven(rdb):
 
 
 @pytest.fixture
+def maven_redhat(rdb):
+    """Prepare database with Maven ecosystem."""
+    maven = Ecosystem(name='maven', backend=EcosystemBackend.maven,
+                      fetch_url='https://access.redhat.com/maven-repository')
+    rdb.add(maven)
+    rdb.commit()
+    return maven
+
+
+@pytest.fixture
 def npm(rdb):
     """Prepare database with NPM ecosystem."""
     npm = Ecosystem(name='npm', backend=EcosystemBackend.npm,
